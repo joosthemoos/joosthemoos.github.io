@@ -44,12 +44,13 @@ main {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 30px;
+    font-family: "sansserif";
   }
 
   /* Change the color of links on hover */
   header li a:hover:not(.active) {
     background-color: #8d9799;
-    color: black;
+    color: white;
     font-family: "sansserif";
     border-radius: 5px 5px 5px 5px;
   }
