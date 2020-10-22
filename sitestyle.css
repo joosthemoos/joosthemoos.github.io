@@ -40,16 +40,15 @@ main {
   }
 
   /* Change the color of links on hover */
-  header a:hover {
+  header a:hover:not(.active) {
     background-color: #ddd;
     color: black;
   }
 
   /* Add a color to the active/current link */
 
-  header a.active {
+  .active {
     background-color: #4cbdcf;
     color: white;
     font-family: "sansserif";
   }
-  
