@@ -1,7 +1,7 @@
 
 body {
     height: 125vh;
-    background-image: url('https://codetheweb.blog/assets/img/posts/style-a-navigation-bar-css/background.jpg');
+    background-image: url('https://cdn.hipwallpaper.com/i/75/76/5yt0Rg.jpg');
     background-size: cover;
     font-family: sans-serif;
 }
@@ -31,7 +31,6 @@ main {
 
   /* Style the links inside the navigation bar */
   header li a {
-    float: left;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
@@ -51,4 +50,5 @@ main {
     background-color: #4cbdcf;
     color: white;
     font-family: "sansserif";
+    height: 80px;
   }
