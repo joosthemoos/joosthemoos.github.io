@@ -1,22 +1,36 @@
 
+body {
+    height: 125vh;
+    background-image: url('https://cdn.hipwallpaper.com/i/75/76/5yt0Rg.jpg');
+    background-size: cover;
+    font-family: sans-serif;
+}
   /* Add a dark blue background color to the top navigation */
-  .topnav {
-    background-color: #00008B;
-    overflow: hidden;
-  }
+header {
+  background-color: #00008B;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  align-items: center;
+  display: flex;
+  height: 80px;
+}
 
-  /*font classes*/
-  .sansserif {
-    font-family: Arial, Helvetica, sans-serif;
-  }
+main {
+  color: black;
+}
 
-  p {
-   font-family: "sansserif";
+   header * {
+     display: inline;
+   }
+
+   header li {
+     margin: 20px;
    }
 
   /* Style the links inside the navigation bar */
-  .topnav a {
-    float: left;
+  header li a {
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
@@ -25,14 +39,16 @@
   }
 
   /* Change the color of links on hover */
-  .topnav a:hover {
+  header li a:hover:not(.active) {
     background-color: #ddd;
     color: black;
   }
 
   /* Add a color to the active/current link */
-  .topnav a.active {
+
+  header .active {
     background-color: #4cbdcf;
     color: white;
     font-family: "sansserif";
+    height: 80px;
   }
