@@ -30,7 +30,7 @@ main {
    }
 
   /* Style the links inside the navigation bar */
-  header a {
+  header li a {
     float: left;
     color: #f2f2f2;
     text-align: center;
@@ -40,14 +40,14 @@ main {
   }
 
   /* Change the color of links on hover */
-  header a:hover:not(.active) {
+  header li a:hover:not(.active) {
     background-color: #ddd;
     color: black;
   }
 
   /* Add a color to the active/current link */
 
-  .active {
+  header .active {
     background-color: #4cbdcf;
     color: white;
     font-family: "sansserif";
