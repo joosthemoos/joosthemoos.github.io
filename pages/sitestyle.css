@@ -7,7 +7,7 @@ body {
 }
   /* Add a dark blue background color to the top navigation */
 header {
-  background-color: #00008B;
+  background-color: #203a63;
   position: fixed;
   top: 0;
   right: 0;
@@ -15,6 +15,7 @@ header {
   align-items: center;
   display: flex;
   height: 80px;
+  box-shadow: 0 0 25px 0 black;
 }
 
 main {
@@ -35,7 +36,7 @@ main {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 40px;
   }
 
   /* Change the color of links on hover */
