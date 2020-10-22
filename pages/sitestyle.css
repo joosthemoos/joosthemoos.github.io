@@ -4,6 +4,8 @@ body {
     background-image: url('https://cdn.hipwallpaper.com/i/75/76/5yt0Rg.jpg');
     background-size: cover;
     font-family: sans-serif;
+    color: white;
+    font-size: 20px;
 }
   /* Add a dark blue background color to the top navigation */
 header {
@@ -36,7 +38,7 @@ main {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 40px;
+    font-size: 30px;
   }
 
   /* Change the color of links on hover */
@@ -52,4 +54,5 @@ main {
     color: white;
     font-family: "sansserif";
     height: 80px;
+    border-radius: 5px 5px 5px 5px;
   }
