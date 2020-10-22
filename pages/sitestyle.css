@@ -20,6 +20,11 @@ header {
   box-shadow: 0 0 25px 0 black;
 }
 
+p {
+  color: white;
+  font-size: 20px;
+}
+
 main {
   color: black;
 }
