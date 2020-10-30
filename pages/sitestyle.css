@@ -1,7 +1,8 @@
 
 body {
     height: 125vh;
-    background-image: url('https://cdn.hipwallpaper.com/i/75/76/5yt0Rg.jpg');
+    /*background-image: url('https://cdn.hipwallpaper.com/i/75/76/5yt0Rg.jpg');*/
+    background-image: url('https://wallpapershome.com/images/pages/pic_h/6592.jpg');
     background-size: cover;
     font-family: sans-serif;
     color: white;
@@ -10,6 +11,9 @@ body {
     margin-bottom: 100px;
     margin-right: 100px;
     margin-left: 100px;
+}
+body a{
+  color: pink;
 }
   /* Add a dark blue background color to the top navigation */
 header {
@@ -96,4 +100,27 @@ main {
     cursor: pointer;
     background-color: #203a63;
     border-radius: 5px 5px 5px 5px;
+
+  }
+  .card {
+  background-color: rgba(255,255,255,0.3);
+  color: #9ca7b8;
+  padding: 40px;
+  margin-top: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  border-radius: 10px 10px 10px 10px;
+
+}
+
+  .card h2{
+
+  }
+  .card p{
+
+    /*text-align: left;*/
+  }
+  .card h4{
+    color: white;
+    font-style: italic;
   }

@@ -18,12 +18,45 @@
       </header>
   <main>
     <h1>Coding</h1>
+    <img src="coding_projects/coding.PNG" alt="Another xkcd? Probably." height = 200>
     <p>Although I started coding HTML websites when I was in elementary school,
     I took an extended break pretty much until the end of high school, when I
     rediscovered my love for computer science and how easily applicable it is
     to other things that I love. Now I have mildly more impressive projects
-    (I hope) than simply being able to Inspect-Element the Google homepage.</p>
+    (I hope) than simply being able to Inspect-Element the Google homepage. Fun fact:
+    this website was built by me from scratch as well!</p>
 
+    <div class="card">
+      <h2>Pronoun Checker</h2>
+      <h4>Jan. 2020 (ongoing)</h4>
+      <p>Sometime in January I started getting annoyed that I wasn't always getting my
+        friends' pronouns correct, so I thought of methods to be able to correct myself
+        so that after some practice on my own I could respect people's pronouns.
+      </p>
+      <p>The result was this very basic pronoun checker (which is still in the works).
+        It uses the Python speech_recognition library and NLTK to be able to read in the
+        speaker's input sentence with a proper name, and then it searches for a correct
+        pronoun in the second sentence.
+      </p>
+      <p>Currently, it only works with male and female pronouns that are inputted in two
+        .txt files. The issue is that it cannot deal with uncertainty such as gender-neutral
+        names or rarer names. The ever-present issue of coreference resolution is also still there,
+        and at the time I did not understand that determining if the pronoun related to the noun is
+        actually a more difficult problem than I thought it was.
+      </p>
+      <p>Relevant files are found <a href="https://github.com/joosthemoos/misc-projects/tree/master/Python/NLP/PANIC%20(Pronoun%20Auditor%20Nastily%20Inflicting%20Charges)" target="_blank">here</a>.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Brickbreaker</h2>
+      <h4>Summer 2019</h4>
+      <p>As part of the introductory Python class I took at Stanford University,
+        one of our projects was to create a Brickbreaker game using their proprietary
+        GUI packages. The result is a fun game!<br><br>
+        Files can be found <a href="https://github.com/joosthemoos/misc-projects/tree/master/Python/Stanford%20Python%20Projects" target="_blank">here</a>.
+      </p>
+    </div>
   </main>
 </body>
 </html>
