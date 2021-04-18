@@ -24,12 +24,69 @@
     I took an extended break pretty much until the end of high school, when I
     rediscovered my love for computer science and how easily applicable it is
     to other things that I love. Now I have mildly more impressive projects
-    (I hope) than simply being able to Inspect-Element the Google homepage. Fun fact:
-    this website was built by me from scratch as well!</p>
+    (I hope) than simply being able to Inspect-Element the Google homepage.</p>
+
+    <div class="card">
+      <h2>A Better Way to Search Python Commands - Databases</h2>
+      <h4>Spring 2021</h4>
+      <p>Languages/toolkits used: Python, Flask, Jinja, PostgreSQL, Javascript, HTML, Google Cloud</p>
+      <img src="coding_projects/db_homepage.PNG" width="1000" height="450" alt="The full homepage!">
+      <p>There are many resources online for Python documentation, and they are highly convoluted and difficult to look through. Currently,
+        there does not seem to be any good website where you can easily search through methods, constants, modules, and packages, as well as have
+        a list of favorites and have the ability to take notes on your work.
+      </p>
+      <p>If you have been facing this problem as well, look no further! In Intro to Databases, together with <a href="https://www.linkedin.com/in/sedonathomas/" target="_blank">Sedona Thomas</a>,
+        a fellow Columbia CS student, we made a PostgreSQL database that manages Python packages, modules, constants, and methods. Each page on our front-end
+        contains a list of all of its constituents - Methods contains methods, Modules contains modules, and Constants contains constants, et cetera. People can
+        register as users and then login, which allows them to access add their own favorite methods/constants/packages, which they can then
+        access via the "About You" page (seen below). Users can also submit their own user code on the main page, and can view their submitted code on
+        the About You page as well. There are also multiple ways to search - either by keyword or by related keywords, or searching your
+        favorites. The Packages and Modules pages also have their own lookups, where you can find what each Package and Module contains. There is also a
+        Contributors page that lists every User who has contributed some User code to the database.
+      </p>
+      <img src="coding_projects/db_aboutyou.PNG" width="1000" height="450" alt="The About You page for Jess (that's me!)">
+      <p>The backend, as was mentioned previously, is a PostgreSQL database. The front-end is built on HTML and Javascript housed within the Jinja templates,
+        then accessed by a Python/Flask backend which queries the database. The entire project runs on a Google Cloud Linux node. There are also some features
+        of the database that are not accessible through the front-end, such as an added Notes functionality (where users can take notes regarding code they
+        feel needs more clarification).
+      </p>
+      <p>While doing this project, I certainly learned a lot, using many tools I have never had the chance to use before.
+        The directions we were given were just enough to get us started with running a Flask app and using SQL, but a lot of the commands Sedona and I
+        ended up figuring out through trial and error, and eventually we came up with a product that we are both quite happy with. I genuinely enjoyed
+        working on this project (despite on occasions unnecessarily short deadlines for certain parts of the project) and now I feel very comfortable
+        working with databases again, should I be presented with the opportunity!
+      </p>
+      <p>If you would like to look at the code for the database/front-end or have any other questions, please email me at jessica.kuleshov@columbia.edu.</p>
+    </div>
+
+
+    <div class="card">
+      <h2>Solving Puzzles and Games - Artificial Intelligence</h2>
+      <h4>March 2021</h4>
+      <p>Language used: Python</p>
+      <p>As part of the Artificial Intelligence class, led by Prof. Ansaf Salleb-Aouissi, we
+        completed a whole slew of mini-coding projects. For me, however, there were two that really stood
+        out in terms of their goal and in their complexity, and those were the projects focused on solving games.
+      </p>
+      <p>One of my favorite ones is a sudoku-solving algorithm that takes a string of 81 digits and solves the board.
+        This assignment focused on using a backtracking algorithm with a minimum-remaining-value (MRV) heuristic. Forward
+        checking was also employed to reduce the search space after every iteration. The code can either take in one 81-digit string
+        as input in the console or a .txt file as input, depending on whether an input is given or not, and is fairly quick - a maximum
+        of two seconds or so for the most complicated board!
+      </p>
+      <p> The other assignment was much more complicated and also quite satisfying to run - playing 2048. We were told to
+        think of solving 2048 with an adversarial search approach, where the computer's insertion of a 2 or a 4 is treated
+        as the adversary and you are the maximizing player. Using an expectiminimax algorithm with alpha-beta pruning, my
+        algorithm reached 2048 50% of the time and 1024 40% of the time, with the occasional 512 or 4096 (if I was lucky).
+        The only heuristic employed was the snake-weighting based on a paper from Nie, Hou, and An, which you can find <a href="http://cs229.stanford.edu/proj2016/report/NieHouAn-AIPlays2048-report.pdf" target="_blank">here</a>.
+      </p>
+      <p>If you would like to look at the code for either of these assignments, please email me at jessica.kuleshov@columbia.edu for access.
+    </div>
 
     <div class="card">
       <h2>Pronoun Checker</h2>
       <h4>Jan. 2020 (ongoing)</h4>
+      <p>Language used: Python</p>
       <p>Sometime in January I started getting annoyed that I wasn't always getting my
         friends' pronouns correct, so I thought of methods to be able to correct myself
         so that after some practice on my own I could respect people's pronouns.
@@ -52,6 +109,7 @@
     <div class="card">
       <h2>Brickbreaker</h2>
       <h4>Summer 2019</h4>
+      <p>Language used: Python</p>
       <p>As part of the introductory Python class I took at Stanford University,
         one of our projects was to create a Brickbreaker game using their proprietary
         GUI packages. The result is a fun game!<br><br>
