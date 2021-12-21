@@ -27,6 +27,34 @@
     (I hope) than simply being able to Inspect-Element the Google homepage.</p>
 
     <div class="card">
+      <h2>Speech Recognition: Pronunciation Assessment and Feedback Tool</h2>
+      <h4>Fall 2021</h4>
+      <p>Languages/toolkits used: Shell Scripting, Python, Kaldi, Google Cloud</p>
+      <p>As part of COMSW6998 Fundamentals of Speech Recognition, taught by Prof. Homayoon Beigi, we were tasked with creating a
+        speech recognition project using the open-source Kaldi toolkit. I decided to work on the issue of
+        pronunciation assessment using ASR methods, creating a rudimentary tool for speakers with highly-accented English speech
+        to assess their own pronunciation and get feedback for what sounds and words to work on.</p>
+        <p>This turns out to be mildly difficult to do (who knew!) but very fun to work with. The workflow I came up with was to
+          first have a model trained on a corpus of slightly-accented, sometimes nonnative English (based on the TED-LIUM corpus of English TED Talks)
+          that then gets force-aligned with a native English dataset (the LibriSpeech corpus of audiobooks). This alignment then
+          should produce a baseline that can represent highly-intelligible English. With this new model, data from a corpus of
+          highly-accented speech (the Speech Accent Archive) can be compared. Kaldi outputs decoded results in the form of lattices.
+          From lattices, the best path through the lattice determines which phone is present at a given time stamp, and the log likelihood
+          of this phone being correct is considered its "confidence". We extract these confidences, compare the phones to the transcript, and
+          then get a rating for each word! Below you can see what such an output would look like - for ease of reading and color-coding, I
+          outputted the results for each speaker in an RTF format.</p>
+          <img src="coding_projects/kaldi_output.png" width="1000" height="450" alt="Pronunciation assessment output">
+          <p>This project was very difficult for me, and there are still many places for it to improve, especially when it comes to proper
+            evaluation. Nevertheless, I learned so much, from gaining a hands-on understanding of signals processing and automatic speech
+            recognition, to working with shell scripting (and making such a gorgeous, stage-divided, with-flags-and-everything main script),
+            to working with very, very, unclean data. It's one of those projects where I could have been working on it forever but deadlines
+            happen and semesters end. Thanks again Prof. Beigi for an excellent class and a real challenge!
+      </p>
+      <p>If you would like to look at the code itself, please email me at jessica.kuleshov@columbia.edu. Otherwise, the paper
+      can be found <a href="coding_projects/sr_final_paper.pdf" target="_blank">here</a>.</p>
+    </div>
+
+    <div class="card">
       <h2>A Better Way to Search Python Commands - Databases</h2>
       <h4>Spring 2021</h4>
       <p>Languages/toolkits used: Python, Flask, Jinja, PostgreSQL, Javascript, HTML, Google Cloud</p>
