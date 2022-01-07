@@ -2,6 +2,7 @@
 <html>
 
   <title>Home</title>
+
   <head>
     <link rel="stylesheet" href="pages/sitestyle.css">
 
@@ -22,29 +23,35 @@
       </header>
   <main>
     <h1>Hi! I'm Jess.</h1>
+    Most recently listening to:
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="en" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <div id="songname"></div>
+    <div id="songartist"> by </div>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+     $.ajax({
+      type: "GET",
+      dataType: "xml",
+      url: "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=joosthemoos&api_key=f2ab7867b0ba44a257ceb3ceeecb8d27&limit=1",
+      success: function(xml){
+       $(xml).find("recenttracks").each(function(){
+        $("#songname").append($(this).contents().filter("track").contents().filter("name").text());
+        $("#songartist").append($(this).contents().filter("track").contents().filter("artist").text() + "<br />");
+       });
+      }
+     });
+    });
+    </script>
+    <br>
+    <br>
     <img src="scuba.jpg" alt="At my PADI certification dive." height = 400>
     <p>Nice to meet you. Take a look around.</p>
     <button onclick="location.href='https://www.linkedin.com/in/jessica-kuleshov-9639122b/';">Keep in touch.</button>
-    <textarea rows="20" cols="40" style="border:none;">
-    <p id="demo">Let AJAX change this text.</p>
-</textarea>
-<button type="button" onclick="loadDoc()">Change Content</button>
 
-<script>
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML = this.responseText;
-    }
-    else {
-      document.getElementById("demo").innerHTML = "hello";
-    }
-  };
-  xhttp.open("GET", "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=joosthemoos&api_key=f2ab7867b0ba44a257ceb3ceeecb8d27", true);
-  xhttp.send();
-}
-</script>
+
   </main>
 
 </body>
