@@ -37,7 +37,7 @@ function loadDoc() {
       document.getElementById("demo").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=joosthemoos&api_key=f2ab7867b0ba44a257ceb3ceeecb8d27&format=json", true);
+  xhttp.open("GET", "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=joosthemoos&api_key=f2ab7867b0ba44a257ceb3ceeecb8d27", true);
   xhttp.send();
 }
 </script>
