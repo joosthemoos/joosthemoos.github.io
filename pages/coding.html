@@ -27,6 +27,62 @@
     (I hope) than simply being able to Inspect-Element the Google homepage.</p>
 
     <div class="card">
+      <h2>Rocketry Static Fire Live Telemetry Display</h2>
+      <h4>Spring 2022</h4>
+      <p>Languages/toolkits used: Python, Docker, Flask, NodeJS, ReactJS, HTML</p>
+      <p>
+        Anyone who knows me in any capacity knows that I am not a frontend gal. So, when someone on my rocketry team wanted a 
+        live-updating telemetry display of sensor data from our testing, naturally I jumped in. The goal here was to interpret the 
+        data that was already streaming over the radio connection and update plots and status bars of various systems. Using this github
+        repo from whoever, it gave me a fairly good start for making this display. It basically is a nice Docker container template that runs 
+        a Flask app that real-time updates whenever new data is added to the end of a text file  of telemetry that the GroundStationDriver script is 
+        reading to from the radio transceiver. The image shown here is a still from a screen recording of one of our static fires.
+      </p>
+      <img src="coding_projects/static_fire_telemetry.png" width="1000" height="450" alt="Static fire telemetry in action!">
+      <p>
+        It was certainly not without its challenges and discoveries though. The first thing I discovered was about the data that was being 
+        read in. While reading through the logic of the code that was interpreting the bytes from the load cells (measuring the thrust of the 
+        rocket engine during fire), I noticed that the numbers were in the hundreds of thousands after being interpreted, sometimes in the millions 
+        when the numbers should have been several orders of magnitude smaller. After a bit of debugging I found it to be an error in the logic of 
+        the interpreting code where Two's Complement was not properly accounted for. Fun off-by-one error! Another problem that took me much longer 
+        to solve was how to center a flexbox. This drove me mad for at least a day, if not more, but after some terribly janky finagling I got it 
+        to work!
+      </p>
+      <p>
+        This telemetry display currently shows load data from two load cells measuring the rocket's thrust, pressure data from the oxidizer tank 
+        pressure transducer, and then shows multiple system status bars. It also shows the time for being able to sync up what was happening on
+        video should the telemetry be screen-recorded. This was a really fun project to take on and was completely outside of my comfort 
+        zone, and honestly? I'd do it again if I had the chance.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Wordle++: Multiplayer Wordle</h2>
+      <h4>Spring 2022</h4>
+      <p>Languages/toolkits used: AWS WebSocket, AWS DynamoDB, AWS Lambda, Python</p>
+      <p>
+        As part of COMSW6998 Cloud Computing & Big Data, taught by Prof. Sambit Sahu, we were supposed to do a final group project
+        that would use intriguing aspects of cloud computing to make some kind of functioning application. My group decided to take
+        on multiplayer functionality (something that had never been brought up in any of the projects we had done through the class
+        thus far) and we used Wordle as our base. The whole project was done using AWS tooling.
+      </p>
+      <img src="coding_projects/wordle_arch_diagram.png" width="1000" height="450" alt="Wordle++ Architecture Diagram">
+      <p>
+        The application is mostly based around a WebSocket API supported by several Lambdas and DynamoDBs. Users, upon logging in through 
+        Amplify/Cognito, are brought to a home screen that gives several options: Join a game, create a game, or view player statistics.
+        If you create a game, you add an instance of a game to a LiveGames DynamoDB and a GameConnections instance that keeps track of players 
+        connected to the WebSocket for that game. When the maximum number of connected players join or an amount of time has elapsed, the game
+        begins by sending all players the word to guess, and whoever guesses it first wins! Player statistics show which player has won the most.
+      </p>
+      <p>
+        Of course, this had many bugs in it and much potential for added functionality. For example, the code had yet to differentiate between a player
+        winning and a player finishing first, and would just send the "Win" screen even if they just got to the bottom. Other than that we had 
+        multiple things we wished to implement such as varying word length, amount of players that can join, and joining a specific game, not just a 
+        random open game. However, this was all of our first forays into anything game-related or multiplayer-related and creating such a 
+        complicated game from scratch was a really exciting time!
+      </p>
+    </div>
+    <div class="card">
       <h2>Speech Recognition: Pronunciation Assessment and Feedback Tool</h2>
       <h4>Fall 2021</h4>
       <p>Languages/toolkits used: Shell Scripting, Python, Kaldi, Google Cloud</p>

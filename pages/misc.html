@@ -24,6 +24,85 @@
       pages. This includes music, performing arts, 3D and CAD design, and more!
     </p>
 
+    <div class="card" id="movingaverage">
+      <h2>Accidentally deriving the moving-average algorithm + flight computer fiasco</h2>
+      <h4>June 2022</h4>
+      <p>Languages/toolkits used: Multigrain Cheerios and a Ramada notepad (and C++?)</p>
+      <p>
+        At the Spaceport America Cup in 2022 (Check "Space" for a better overview), we ran into more than 
+        a few problems - quite a few, actually. One of them was that we had not realized that the flight 
+        computer that we had created ourselves (the SRAD one, or "Student-Researched and Designed"), was 
+        not fully programmed. The goal of the flight computer is to manage our dual-deployment recovery 
+        system which consisted of a drogue chute deploying at apogee (the max. altitude of the flight) and 
+        a larger main chute deploying at 1500ft. The flight computer can detect this in a multitude of ways
+        primarily by using a barometer/thermometer combo for altitude reading and a gyroscope for 
+        acceleration reading.
+      </p>
+      <p>
+        However, this sensor data is noisy - if you want to detect apogee, for example, you dont want to count 
+        an accidental spike in the reading as the maximum apogee, risking deploying the drogue chute on the way 
+        up. How do you correct for this error? The person who had written the code used a Madgwick filter 
+        but for one I wasn't sure that it would perfectly smooth everything (I couldn't get a guaranteed yes 
+        on that one) and for two we for some reason decided to use Arduino Nanos which have almost no storage,
+        and the library for the filter was very large. I had to think of a way to preserve past data trends 
+        while being able to overlook significant outliers and not weight them greatly.
+      </p>
+      <p>
+        Enter Cheerios. I set up a model of a slightly noisy sensor reading by modeling with piles of Cheerios 
+        that generally increased then decreased in amounts. My first step was to keep the past x sensor readings 
+        in a list, and then check in between each of those sensor readings if Cheerio pile x+1 had a greater or 
+        less amount of Cheerios than pile x. However, this still weights outliers too greatly - what if you have
+        a BUNCH of large Cheerio piles? You are basically relying way too much on the arbitrary size of the array 
+        that you are creating to make sure that the average increase/decrease detection is not swayed by bad data.
+      </p>
+      <p>
+        So why not use the average of the system at a given time? In this setup, you have two arrays. The first 
+        array is the one we talked about which just has the past x sensor readings. The other array is now full of 
+        x/2 averages of the first array at every given state. Say, for example, that you have an array [0,0,0,0,0,1] 
+        of sensor readings and then the other array would be [0,0,1/6] of current averages. This method bakes in 
+        previous knowledge already by having the moving average, and you can even go one degree higher by doing 
+        what we were attempting to do before and look at increasing/decreasing patterns - this time with the array 
+        of state averages. This successfully overlooks large data spikes or non-continuing trends and though you 
+        sacrifice several timesteps as the system state fully clears up for you to deploy the drogue, it is 
+        more important to be conservative in this case and deploy it late than deploy on the way up.
+      </p>
+      <p>
+        So, turns out this is called the moving-average algorithm, and it is a common signals-processing technique. 
+        Only learned that afterwards but, heyo! Maybe if I were a mathematician in the 1800's I could have made a 
+        name for myself and it would be called the Kuleshov algorithm or something corny like that.
+      </p>
+    </div>
+
+    <div class="card" id="ling_minor">
+      <h2>I made a Linguistics minor in the Columbia School of Engineering!</h2>
+      <h4>Fall 2019 - Spring 2022</h4>
+      <p>
+        Man, this was a long time coming and it took way too long.
+      </p>
+      <p>
+        Ever since I took a Linguistics class at CTY I have always wanted to study Linguistics in some capacity - however, when I 
+        got into the Columbia engineering school, I realized that I would not get any credit for taking the Linguistics classes that 
+        I was going to take regardless. I was told very quickly after coming to Columbia that minors can be made and look! They weren't 
+        even made that long ago! So you can make one too, Jess! I was really, really naive to think that was the case.
+      </p>
+      <p>
+        I started honestly working towards a minor in December 2019 after the major had been passed in the College, 
+        which then people in the administration procrastinated on responding to me about until Covid 
+        hit and the Engineering Student Council president told me that they no longer would be working. It was then on hiatus until junior 
+        year, where I worked with the next ESC president on getting it presented to ESC, which was successful. The next step was presenting 
+        the plan of classes to the SEAS Committee on Instruction, or COI, comprised of professors and other staff who would be really my 
+        final barrier to making this a reality. I did not get the chance to do this until December of 2021, and I had to get the 
+        curriculum vetted multiple times before it finally passed through there. In the interim, somehow the Computer Science department 
+        was placed in charge of passing the minor and I (and everybody, it seems) lost track of who was actually responsible for 
+        doing the work to get this passed.
+      </p>
+      <p>
+        After many emails, pinging, CC'ing and general back-and-forth it passed! I managed to get it just in time for graduation and get 
+        it into the aging backend of Columbia's transcript system to get people at least some recognition for taking the courses they had 
+        been taking all along. This was a logistical hell and I am so glad to be out of it.
+      </p>
+    </div>
+
     <div class="card" id="dynamic">
       <h2>Learning what a "static website" means</h2>
       <h4>January 2022</h4>
